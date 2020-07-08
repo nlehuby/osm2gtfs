@@ -129,6 +129,13 @@ class TripsCreatorCiAbidjan(TripsCreator):
             route_index = 0
             itineraries = line.get_itineraries()
 
+            if 'frequency' in line.tags and line.tags['frequency'] != "0" :
+                try :
+                    line.tags['interval']= str(int(line.tags['frequency']))
+                    line.tags['opening_hours']= "Mo-Su,PH 05:00-22:00"
+                except:
+                    pass
+
             line_hours_list = transport_hours.tagsToGtfs(line.tags)
             line_hours_dict = self._group_hours_by_service_period(
                 feed, line_hours_list)
@@ -174,6 +181,8 @@ class TripsCreatorCiAbidjan(TripsCreator):
                             itinerary_hour['start_time'], itinerary_hour['end_time'],
                             itinerary_hour['headway'])
 
+                    if 'travel_time' in a_route.tags:
+                        a_route.tags['duration'] = a_route.tags['travel_time']
                     if 'duration' in a_route.tags:
                         try:
                             travel_time = int(a_route.tags['duration'])

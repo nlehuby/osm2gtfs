@@ -1,0 +1,35 @@
+{
+    "query": {
+        "bbox": {
+            "n": "5.7844",
+            "s": "5.4783",
+            "e": "0.0611",
+            "w": "-0.4779"
+        },
+        "tags": {
+            "route": "bus"
+        }
+    },
+    "stops": {
+        "name_without": "unamed stop",
+        "name_auto": "no"
+    },
+    "agency": {
+        "agency_id": "AM3",
+        "agency_name": "Accra Tro tro",
+        "agency_url": "https://ama.gov.gh/welcome/transport/",
+        "agency_timezone": "Africa/Accra",
+        "agency_lang": "en",
+        "agency_phone": "",
+        "agency_fare_url": ""
+    },
+    "feed_info": {
+        "publisher_name": "Jungle Bus",
+        "publisher_url": "http://junglebus.io",
+        "version": "0.2",
+        "start_date": "20200701",
+        "end_date": "20210730"
+    },
+    "output_file": "data/gh-accra_abidjan.zip",
+    "selector": "ci_abidjan"
+}
